@@ -1,0 +1,61 @@
+@media (max-width: 960px) {
+  .hero-orbit { opacity: .45; right: -80px; }
+  .hotel-grid, .hotel-rail { grid-template-columns: repeat(2, 1fr); }
+  .deal-grid, .deal-rail, .idea-grid { grid-template-columns: 1fr; }
+  .idea-card { min-height: 220px; }
+  .dialog-layout { grid-template-columns: minmax(0, 1fr) 290px; }
+  .dialog-layout.has-result { grid-template-columns: 1fr 1fr; }
+  .search-card, .travel-search { grid-template-columns: minmax(150px, 1fr) 24px minmax(150px, 1fr) minmax(145px, .75fr) 170px; }
+}
+
+@media (max-width: 760px) {
+  .topbar, .hero-content, .content-inner, .search-card, .quick-prompts { width: min(100% - 28px, 1180px); }
+  .content-section { width: min(100% - 28px, 1180px); }
+  .topnav a, .nav-links a { display: none; }
+  .hero { min-height: 680px; }
+  .hero-content { padding-top: 36px; }
+  .hero h1 { font-size: 46px; }
+  .hero-orbit { display: none; }
+  .search-card, .travel-search { grid-template-columns: 1fr; margin-top: 34px; }
+  .search-field, .travel-search label { border-right: 0; border-bottom: 1px solid var(--line); }
+  .search-arrow { display: none; }
+  .primary-button, .travel-search > button { min-height: 52px; }
+  .quick-prompts { overflow-x: auto; padding-bottom: 5px; }
+  .quick-prompts { scrollbar-width: none; }
+  .quick-prompts::-webkit-scrollbar { display: none; }
+  .quick-prompts button { flex: 0 0 auto; }
+  .content-surface { padding-top: 42px; }
+  .hotel-grid, .hotel-rail { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
+  .hotel-card { flex: 0 0 82%; scroll-snap-align: start; }
+  .section-heading { align-items: start; }
+  .section-heading h2 { font-size: 26px; }
+  .floating-ai { right: 16px; bottom: 16px; }
+  .mini-chat {
+    right: 12px;
+    bottom: 78px;
+    width: calc(100vw - 24px);
+    height: min(540px, calc(100dvh - 100px));
+    border-radius: 18px;
+  }
+  .modal-backdrop { padding: 0; }
+  .ai-dialog { width: 100%; height: 100dvh; border-radius: 0; }
+  .dialog-header { padding: 12px 14px; }
+  .dialog-title p, .proxy-button, .proxy-status { display: none; }
+  .dialog-layout { grid-template-columns: 1fr; }
+  .dialog-layout.has-result { grid-template-columns: 1fr; overflow-y: auto; }
+  .dialog-layout.has-result .result-panel { min-height: 62vh; }
+  .result-hero-copy { padding-right: 0; }
+  .result-hero-copy { padding-bottom: 68px; }
+  .result-summary-bar { right: 16px; bottom: 16px; }
+  .result-route-grid { grid-template-columns: 1fr; }
+  .trip-panel { display: none; }
+  .messages { padding: 20px 14px; }
+  .message-bubble { max-width: 92%; }
+  .composer { padding: 12px; }
+  .send-button { min-width: 52px; padding: 0 12px; font-size: 0; }
+  .send-button::after { content: "\2191"; font-size: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

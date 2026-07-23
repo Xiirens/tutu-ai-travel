@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#16126f" />
+    <title>Tutu AI — путешествия начинаются с идеи</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="site-page">
+      <header class="hero">
+        <nav class="topbar" aria-label="Основная навигация">
+          <a class="brand" href="#" aria-label="Tutu AI, главная">
+            <span class="brand-word">tu<span>tu</span></span>
+            <span class="brand-ai">AI</span>
+          </a>
+          <div class="nav-links">
+            <a href="#deals">Выгодные маршруты</a>
+            <a href="#hotels">Отели</a>
+            <a href="#ideas">Идеи поездок</a>
+          </div>
+          <button class="nav-ai-button" type="button" data-open-ai>
+            <span class="spark">✦</span> AI-помощник
+          </button>
+        </nav>
+
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="hero-kicker">Путешествие, собранное под вас</p>
+            <h1>Куда отправимся<br />в этот раз?</h1>
+            <p class="hero-subtitle">
+              Билеты, отель и идеи для поездки — в одном месте.
+            </p>
+          </div>
+          <div class="hero-orbit" aria-hidden="true">
+            <div class="orbit-card orbit-card-main">
+              <span>25–26 июля</span>
+              <strong>Москва → Петербург</strong>
+              <small>поезд + отель</small>
+            </div>
+            <div class="orbit-dot orbit-dot-one">✦</div>
+            <div class="orbit-dot orbit-dot-two">⌁</div>
+          </div>
+        </div>
+
+        <form id="home-search" class="travel-search">
+          <label>
+            <span>Откуда</span>
+            <input id="home-origin" placeholder="Москва" autocomplete="off" />
+          </label>
+          <span class="search-arrow" aria-hidden="true">→</span>
+          <label>
+            <span>Куда</span>
+            <input id="home-destination" placeholder="Куда угодно" autocomplete="off" />
+          </label>
+          <label>
+            <span>Когда</span>
+            <input id="home-date" type="date" />
+          </label>
+          <button type="submit">Подобрать поездку</button>
+        </form>
+
+        <div class="quick-prompts" aria-label="Быстрые идеи">
+          <span>Попробуйте:</span>
+          <button type="button" data-ai-prompt="Куда съездить из Москвы на выходные?">
+            Куда на выходные
+          </button>
+          <button type="button" data-ai-prompt="Подбери поездку к морю на несколько дней">
+            Хочу к морю
+          </button>
+          <button type="button" data-ai-prompt="Найди недорогую поездку с хорошим отелем">
+            Поездка до 30 000 ₽
+          </button>
+        </div>
+      </header>
+
+      <main class="content-surface">
+        <section id="hotels" class="content-section">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Готовые варианты на 25–26 июля</p>
+              <h2>Отель + дорога туда и обратно</h2>
+              <p>Сразу видно весь план поездки и ориентировочную стоимость</p>
+            </div>
+            <button class="text-button" type="button" data-open-ai>Подбери путешествие на выходные с AI →</button>
+          </div>
+          <div class="card-rail hotel-rail">
+            <article class="hotel-card" tabindex="0" role="button" data-ready-trip="petersburg">
+              <div class="card-photo photo-petersburg"><span class="rating">9,6</span></div>
+              <div class="card-body">
+                <p class="card-meta">25–26 июля · Санкт-Петербург</p>
+                <h3>HELEN HOTEL</h3>
+                <p class="card-detail package-route">✈ Самолёт из Москвы туда-обратно</p>
+                <div class="price-row"><strong>31 564 ₽</strong><span>дорога + 1 ночь</span></div>
+              </div>
+            </article>
+            <article class="hotel-card" tabindex="0" role="button" data-ready-trip="kazan">
+              <div class="card-photo photo-kazan"><span class="rating">8,1</span></div>
+              <div class="card-body">
+                <p class="card-meta">24–26 июля · Казань</p>
+                <h3>АМАКС Сафар-отель</h3>
+                <p class="card-detail package-route">✈ Самолёт из Москвы туда-обратно</p>
+                <div class="price-row"><strong>25 174 ₽</strong><span>дорога + 2 ночи</span></div>
+              </div>
+            </article>
+            <article class="hotel-card" tabindex="0" role="button" data-ready-trip="yaroslavl">
+              <div class="card-photo photo-yaroslavl"><span class="rating">8,3</span></div>
+              <div class="card-body">
+                <p class="card-meta">24–26 июля · Ярославль</p>
+                <h3>Которосль</h3>
+                <p class="card-detail package-route">🚆 Поезд из Москвы туда-обратно</p>
+                <div class="price-row"><strong>10 102 ₽</strong><span>дорога + 1 ночь</span></div>
+              </div>
+            </article>
+            <article class="hotel-card" tabindex="0" role="button" data-ready-trip="ryazan">
+              <div class="card-photo photo-ryazan"><span class="rating">9,5</span></div>
+              <div class="card-body">
+                <p class="card-meta">24–26 июля · Рязань</p>
+                <h3>Отель Старый Город</h3>
+                <p class="card-detail package-route">▣ Автобус из Москвы туда-обратно</p>
+                <div class="price-row"><strong>16 340 ₽</strong><span>дорога + 2 ночи</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="deals" class="content-section deals-section">
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="section-kicker">Цены радуют</p>
+              <h2>Это выгодно</h2>
+              <p>Интересные маршруты из Москвы на ближайшие даты</p>
+            </div>
+            <div class="filter-pills" aria-label="Фильтр транспорта">
+              <button class="active" type="button" data-transport-filter="all">Все</button>
+              <button type="button" data-transport-filter="plane">Самолёты</button>
+              <button type="button" data-transport-filter="train">Поезда</button>
+              <button type="button" data-transport-filter="bus">Автобусы</button>
+            </div>
+          </div>
+          <div class="card-rail deal-rail">
+            <article class="deal-card" data-transport="plane"><span class="transport-icon">✈</span><h3>Москва → Петербург</h3><p>25 июл · прямой</p><strong>от 5 749 ₽</strong><span class="discount">−18%</span></article>
+            <article class="deal-card" data-transport="train"><span class="transport-icon">🚆</span><h3>Москва → Ярославль</h3><p>26 июл · 3 ч 24 мин</p><strong>от 1 294 ₽</strong><span class="discount">−12%</span></article>
+            <article class="deal-card" data-transport="plane"><span class="transport-icon">✈</span><h3>Москва → Казань</h3><p>1 авг · прямой</p><strong>от 4 980 ₽</strong><span class="discount">−16%</span></article>
+            <article class="deal-card" data-transport="bus"><span class="transport-icon">🚌</span><h3>Москва → Суздаль</h3><p>2 авг · прямой автобус</p><strong>от 1 610 ₽</strong><span class="discount">−10%</span></article>
+          </div>
+        </section>
+
+        <section id="ideas" class="content-section">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Когда хочется сменить картинку</p>
+              <h2>Идеи на выходные</h2>
+              <p>Готовые сценарии, которые можно настроить в чате</p>
+            </div>
+          </div>
+          <div class="idea-grid">
+            <button class="idea-card idea-suzdal" type="button" data-ai-prompt="Собери спокойные выходные в Суздале">
+              <span>1–2 дня</span><strong>Медленные выходные<br />в Суздале</strong><small>прогулки · русская кухня · спа</small>
+            </button>
+            <button class="idea-card idea-petersburg" type="button" data-ai-prompt="Собери насыщенные выходные в Санкт-Петербурге">
+              <span>2 дня</span><strong>Петербург без спешки</strong><small>музеи · набережные · гастрономия</small>
+            </button>
+            <button class="idea-card idea-nature" type="button" data-ai-prompt="Хочу на выходные на природу недалеко от Москвы">
+              <span>Перезагрузка</span><strong>Домик среди сосен</strong><small>тишина · баня · завтрак</small>
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <aside id="mini-chat" class="mini-chat" aria-label="Чат с AI-путеводителем" hidden>
+        <header class="mini-chat-header">
+          <div>
+            <span class="mini-chat-status"></span>
+            <strong>Джарвел</strong>
+            <small>AI-путеводитель</small>
+          </div>
+          <div class="mini-chat-actions">
+            <button id="mini-expand" type="button">Развернуть</button>
+            <button id="mini-close" type="button" aria-label="Закрыть чат">×</button>
+          </div>
+        </header>
+        <div id="mini-messages" class="mini-chat-messages" aria-live="polite"></div>
+        <div id="mini-quick-replies" class="mini-chat-suggestions">
+          <button type="button" data-mini-prompt="Куда съездить на выходные?">Куда на выходные?</button>
+          <button type="button" data-mini-prompt="Не знаю куда поехать — предложи варианты">Предложи варианты</button>
+        </div>
+        <form id="mini-chat-form" class="mini-chat-composer">
+          <input id="mini-chat-input" maxlength="4000" placeholder="Задайте вопрос" required />
+          <button id="mini-send" type="submit" aria-label="Отправить">→</button>
+        </form>
+      </aside>
+
+      <button id="mini-chat-toggle" class="floating-ai" type="button" aria-label="Открыть чат с AI">
+        <span>✦</span><strong>Подбери путешествие на выходные с AI →</strong>
+      </button>
+    </div>
+
+    <div id="ai-modal" class="modal-backdrop" aria-hidden="true">
+      <section class="ai-dialog" role="dialog" aria-modal="true" aria-labelledby="ai-title">
+        <header class="dialog-header">
+          <div>
+            <p class="eyebrow">Ваш AI-путеводитель</p>
+            <h2 id="ai-title">Джарвел</h2>
+          </div>
+          <div class="dialog-actions">
+            <button id="proxy-check" class="proxy-status" type="button">Проверить прокси</button>
+            <button id="close-ai" class="close-button" type="button" aria-label="Закрыть">×</button>
+          </div>
+        </header>
+
+        <div class="dialog-layout">
+          <section id="trip-result" class="result-panel" aria-live="polite" hidden>
+            <div class="result-hero">
+              <a id="result-photo-credit" class="result-photo-credit" href="https://unsplash.com/" target="_blank" rel="noopener noreferrer" hidden></a>
+              <div class="result-hero-copy">
+                <p class="eyebrow">Готовая поездка</p>
+                <h2 id="result-title"></h2>
+                <p id="result-description"></p>
+              </div>
+              <div class="result-summary-bar"><span>Вся поездка</span><strong id="result-price"></strong></div>
+            </div>
+            <div class="result-route-grid">
+              <article class="result-block"><div class="result-block-heading"><span class="result-icon">→</span><strong>Дорога туда</strong></div><div id="result-outbound" class="result-details"></div></article>
+              <article class="result-block result-hotel-block"><div class="result-block-heading"><span class="result-icon">⌂</span><strong>Отель</strong></div><div id="result-hotel" class="result-details"></div></article>
+              <article class="result-block"><div class="result-block-heading"><span class="result-icon">←</span><strong>Дорога обратно</strong></div><div id="result-return" class="result-details"></div></article>
+            </div>
+            <div class="result-lower">
+              <div class="result-activities"><h3>Если захочется</h3><ul id="result-activities"></ul></div>
+            </div>
+            <div id="result-actions" class="result-actions"></div>
+            <div class="result-discover">
+              <p>Что посмотреть подробнее?</p>
+              <button type="button" data-result-prompt="Составь маршрут прогулки по дням">Маршрут по дням</button>
+              <button type="button" data-result-prompt="Посоветуй рестораны рядом с отелем">Рестораны</button>
+              <button type="button" data-result-prompt="Что из музеев и культурных мест стоит посетить?">Культура и музеи</button>
+            </div>
+          </section>
+          <section class="chat-shell">
+            <div id="messages" class="messages" aria-live="polite">
+              <article class="message assistant"><div class="message-bubble">Привет! Опиши поездку — или скажи, что нравится, и я предложу варианты.</div></article>
+            </div>
+            <div id="quick-replies" class="quick-replies" aria-label="Варианты ответа">
+              <button type="button">Предложи варианты</button>
+              <button type="button">Эти выходные</button>
+              <button type="button">Заполнить параметры</button>
+            </div>
+            <form id="chat-form" class="composer">
+              <textarea id="message-input" rows="1" maxlength="4000" placeholder="Задайте вопрос" required></textarea>
+              <button id="send-button" type="submit" aria-label="Отправить">→</button>
+            </form>
+            <p class="ai-disclaimer">AI может ошибаться — проверяйте даты и условия перед покупкой.</p>
+          </section>
+
+          <aside class="trip-panel">
+            <div class="trip-panel-heading">
+              <p class="eyebrow">Собираем вместе</p>
+              <h3>Ваша поездка</h3>
+              <p>Поля обновляются по ходу разговора, но их всегда можно изменить.</p>
+            </div>
+            <label>Откуда<input id="trip-origin" maxlength="120" placeholder="Москва" /></label>
+            <label>Куда<input id="trip-destination" maxlength="120" placeholder="Санкт-Петербург" /></label>
+            <div class="dates-row">
+              <label>Туда<input id="trip-date" type="date" /></label>
+              <label>Обратно<input id="trip-return-date" type="date" /></label>
+            </div>
+            <div class="passengers">
+              <label>Взрослые<input id="trip-adults" type="number" min="1" max="9" value="1" /></label>
+              <label>Дети<input id="trip-children" type="number" min="0" max="9" value="0" /></label>
+            </div>
+            <label>Бюджет, ₽<input id="trip-budget" type="number" min="0" step="1000" placeholder="Например, 50000" /></label>
+            <fieldset class="transport-picker">
+              <legend>Как добираемся</legend>
+              <label><input type="checkbox" value="plane" /> Самолёт</label>
+              <label><input type="checkbox" value="train" /> Поезд</label>
+              <label><input type="checkbox" value="bus" /> Автобус</label>
+            </fieldset>
+            <input id="trip-stage" type="hidden" value="collecting" />
+            <div class="trip-summary-card">
+              <span>✦</span>
+              <p><strong>Здесь появится маршрут</strong><br />Билеты, отель и итоговая стоимость — следующим шагом.</p>
+            </div>
+            <button id="new-chat" class="secondary-button" type="button">Начать новый диалог</button>
+          </aside>
+        </div>
+      </section>
+    </div>
+
+    <script src="/static/app.js" type="module"></script>
+  </body>
+</html>
